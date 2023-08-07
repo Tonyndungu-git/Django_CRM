@@ -22,4 +22,9 @@ def home(request):
         return render(request, 'home.html', data)
 
 def logout_user(request):
-    pass
+    logout(request)
+    messages.success(request, 'Logout successful')
+    return redirect('home')
+
+def register_user(request):
+    return render(request, 'register.html', {'key': 'value'})
